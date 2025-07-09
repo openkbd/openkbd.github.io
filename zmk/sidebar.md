@@ -10,7 +10,7 @@
     * [瞬时开启层](zmk/keymap/l-layer)
     * [层开关](zmk/keymap/t-layer)
     * [跳转到层](zmk/keymap/to-layer)
-    * [按键 | 瞬时开启层](zmk/keymap/layer-tap-key)
-    * [按键 | 修饰键](zmk/keymap/mods-tap-key)
+    * [按键 | 瞬时开启层](zmk/keymap/layer-tap)
+    * [按键 | 修饰键](zmk/keymap/mod-tap)
 * [Keyboards](zmk/keyboards/)
 
