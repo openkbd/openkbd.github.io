@@ -12,5 +12,6 @@
     * [跳转到层](zmk/keymap/to-layer)
     * [按键 | 瞬时开启层](zmk/keymap/layer-tap)
     * [按键 | 修饰键](zmk/keymap/mod-tap)
+    * [其他功能](zmk/keymap/other-behaviors)
 * [Keyboards](zmk/keyboards/)
-
+* [Bootloader, 刷固件](zmk/bootloader/)
