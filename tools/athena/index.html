@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena GIF</title>
+    <script src="./jquery.slim.min.js"></script>
+    <script src="./FileSaver.min.js"></script>
+    <script src="./bin2uf2.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 水平居中 */
+            justify-content: center; /* 垂直居中 */
+            min-height: 100vh; /* 保证页面至少占满视口高度 */
+            margin: 0;
+            background-color: #f0f0f0; /* 轻微的背景色 */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px; /* 标题下方留白 */
+        }
+        .upload-section {
+            margin-bottom: 20px; /* 上传按钮下方留白 */
+        }
+        .button-group {
+            display: flex; /* 让按钮在同一行 */
+            gap: 10px; /* 按钮之间的间距 */
+            flex-wrap: wrap; /* 如果屏幕太窄，按钮可以换行 */
+            justify-content: center; /* 按钮组内部居中 */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease; /* 鼠标悬停效果 */
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="file"] {
+            display: none; /* 隐藏原始的文件输入框 */
+        }
+        .custom-file-upload {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .custom-file-upload:hover {
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Athena QGF(GIF) to UF2</h1>
+
+    <div class="upload-section">
+        <label for="file-upload" class="custom-file-upload">
+            点击选择分辨率为128x128的QGF文件
+        </label>
+        <input id="file-upload" type="file" accept=".qgf"/>
+    </div>
+
+    <div class="button-group">
+        <button id="gif-0">GIF0_CapsLock</button>
+        <button id="gif-1">GIF1_Typing</button>
+        <button id="gif-2">GIF2</button>
+        <button id="gif-3">GIF3</button>
+        <button id="gif-4">GIF4</button>
+        <button id="gif-5">GIF5</button>
+    </div>
+
+    <p>注: 图片不会上传至互联网，仅在本机处理</p>
+
+</body>
+</html>
