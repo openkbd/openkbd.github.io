@@ -67,15 +67,35 @@ QMK uses a graphics format _("Quantum Graphics Format" - QGF)_ specifically fo
 
 qgf格式的说明见: [https://docs.qmk.fm/quantum_painter_qgf](https://docs.qmk.fm/quantum_painter_qgf)
 
-目前使用QMK的官方工具转换，首先需要有安装QMK的编译环境，如果已装可以跳过。
+目前只有QMK的官方工具可以转换这个格式。
 
-### 1 安装QMK编译环境
+### 1 安装QMK环境
 
-如果没有安装过编译环境，先参考这里，我自己使用的是WSL Ubuntu。
+如果没有安装过编译环境，先参考这里: https://docs.qmk.fm/newbs_getting_started 。
 
-QMK的教程在如下链接，要运行 qmk setup 无报错后，运行环境就可用了。
+如果只需要转换格式或简单开发，在windows下更推荐安装 QMK MSYS。
 
-https://docs.qmk.fm/newbs_getting_started
+具体操作一共只有两步:
+1. 安装`QMK_MSYS.exe`
+2. 在安装后的环境里，运行命令 `qmk setup`。
+
+具体如下:
+
+从 https://github.com/qmk/qmk_distro_msys/releases/latest 下载最新的 `QMK_MSYS.exe`，然后双击运行安装它，安装时的所有选项保持默认即可。
+
+安装后默认路径是 `C:\QMK_MSYS`。如下图，运行此文件夹下的 `QMK_MSYS`，显示信息如下。
+
+![|600](assets/qmk-msys-01.jpg)
+
+再输入命令 `qmk setup`，然后输入 y 确认一次，就耐心等待安装完成。
+
+![|600](assets/qmk-msys-02.jpg)
+
+安装完成后，如下图，会显示 `QMK is ready to go`
+
+![|600](assets/qmk-msys-03.jpg)
+
+这样QMK的运行环境就已经安装好，此操作只需要执行一次。
 
 ### 2 转换图片
 
@@ -83,15 +103,18 @@ https://docs.qmk.fm/newbs_getting_started
 
 https://docs.qmk.fm/quantum_painter#quantum-painter-cli
 
-假如在第一步里，保存的文件为 athena1.gif，建议将这个文件放到qmk的子目录下，比如我是放在athena1800所在的目录。然后在此目录下，执行如下命令
+假如在第一步里，保存的文件为 `athena1.gif`，然后把它放在了 `C:\gif` 这个目录里。
+
+我们需要做的就是在 QMK_MSYS 里，先用 `cd C:\gif` 转到该目录下，再执行如下命令。
 
 ```
 qmk painter-convert-graphics -f rgb565 -i athena1.gif -w -o ./
 ```
 
-![](assets/athena-11.jpg)
+![|600](assets/qmk-msys-04.jpg)
 
 如上图，如果没有报错，就得到了 athena1.qgf。
+
 
 ## 第三步，将QGF写入到键盘内
 
