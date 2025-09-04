@@ -2,14 +2,26 @@
 
 这是本站当前第一款支持小屏幕的键盘。这里简单说一下当前自定义小屏幕动图的方式。
 
-当前使用的都是开放的工具网站和QMK的官方工具，后续会简化此步骤。
+支持的图片尺寸是128x128的。可以使用现有的符合条件的GIF图。
+
+## 转换GIF为UF2格式，刷入键盘
+
+这里给了一个简单的在线工具，https://openkbd.github.io/tools/athena/
+
+选择上传符合条件的GIF文件。条件是:
+1. GIF图片的分辨率是128x128
+2. 用作GIF0和GIF1的，要小于31帧。用作GIF2到GIF5的，要小于63帧。
+
+再下载对应的GIFx，下载的结果文件格式为UF2。键盘进入刷机模式后，将这个UF2文件像烧录固件一样，拖到目标磁盘内，完成更新对应的GIFx。
+
+![](assets/athena-gif2uf2-01.png)
 
 
-## 第一步，制作128x128的GIF图片
+## 自己修改制作128x128的GIF图片
 
-Athena使用的屏幕分辨率为128x128，因此，需要的图片分辨率也得是128x128。
+如果你要使用的GIF图不是128x128的，则需要先做一些加工。
 
-有很多方法可以将GIF图片改到128x128尺寸，这里推荐使用一个叫ezgif的在线网站，下面步骤，只要操作一次就熟悉了。
+有很多方法可以将GIF图片改到128x128尺寸，这里推荐使用一个叫ezgif的在线网站，下面是步骤，只要操作一次就熟悉了。
 
 ### 1裁剪图片为正方形
 
@@ -48,7 +60,7 @@ Athena使用的屏幕分辨率为128x128，因此，需要的图片分辨率也�
 
 如果图片的帧率比较高，还需要降低一些，使用ezgif的这个工具，在第二步如果QGF使用默认RGB565，GIF请使用10到20fps，也就是每帧时间50到100ms。
 
-转换后的文件尺寸，要不大于1M或2M，所以打字和CAPS的动画，最多约30帧，其他的固定循环动画最大使用60帧。
+转换后的文件尺寸，要不大于1M或2M，所以打字和CAPS的动画，最多约31帧，其他的固定循环动画最大使用63帧。
 
 这里可以使用 optimize 中的 `Remove every 2nd frame`，这样减掉一半的帧。
 
@@ -61,62 +73,9 @@ Athena使用的屏幕分辨率为128x128，因此，需要的图片分辨率也�
 最后再点击 save，保存修改好的图片到本地。
 
 
-## 第二步，转换GIF为QMK支持的QGF格式
+## 额外补充说明
 
-QMK uses a graphics format _("Quantum Graphics Format" - QGF)_ specifically for resource-constrained systems.
-
-qgf格式的说明见: [https://docs.qmk.fm/quantum_painter_qgf](https://docs.qmk.fm/quantum_painter_qgf)
-
-目前只有QMK的官方工具可以转换这个格式。
-
-### 1 安装QMK环境
-
-如果没有安装过编译环境，先参考这里: https://docs.qmk.fm/newbs_getting_started 。
-
-如果只需要转换格式或简单开发，在windows下更推荐安装 QMK MSYS。
-
-具体操作一共只有两步:
-1. 安装`QMK_MSYS.exe`
-2. 在安装后的环境里，运行命令 `qmk setup`。
-
-具体如下:
-
-从 https://github.com/qmk/qmk_distro_msys/releases/latest 下载最新的 `QMK_MSYS.exe`，然后双击运行安装它，安装时的所有选项保持默认即可。
-
-安装后默认路径是 `C:\QMK_MSYS`。如下图，运行此文件夹下的 `QMK_MSYS`，显示信息如下。
-
-![|600](assets/qmk-msys-01.jpg)
-
-再输入命令 `qmk setup`，然后输入 y 确认一次，就耐心等待安装完成。
-
-![|600](assets/qmk-msys-02.jpg)
-
-安装完成后，如下图，会显示 `QMK is ready to go`
-
-![|600](assets/qmk-msys-03.jpg)
-
-这样QMK的运行环境就已经安装好，此操作只需要执行一次。
-
-### 2 转换图片
-
-这时需要使用到命令行，qmk的官方文档对应位置见下面链接:
-
-https://docs.qmk.fm/quantum_painter#quantum-painter-cli
-
-假如在第一步里，保存的文件为 `athena1.gif`，然后把它放在了 `C:\gif` 这个目录里。
-
-我们需要做的就是在 QMK_MSYS 里，先用 `cd C:\gif` 转到该目录下，再执行如下命令。
-
-```
-qmk painter-convert-graphics -f rgb565 -i athena1.gif -w -o ./
-```
-
-![|600](assets/qmk-msys-04.jpg)
-
-如上图，如果没有报错，就得到了 athena1.qgf。
-
-
-## 第三步，将QGF写入到键盘内
+除了使用本站提供的工具转换gif外，也可以使用qmk的官方命令行，先将gif转为qgf格式，再把qgf转为uf2格式。这部分因为要安装qmk的运行环境，所以会复杂一些，可以参考qmk的官方文档。
 
 Athena一共存放了6个图片，它们的qgf文件的大小有如下限制。
 
@@ -128,10 +87,3 @@ Athena一共存放了6个图片，它们的qgf文件的大小有如下限制。
 |0x10800000|GIF3|2MByte|
 |0x10A00000|GIF4|2MByte|
 |0x10C00000|GIF5|2MByte|
-
-目前采用的方法是将qgf文件转为RP2040支持烧录的uf2格式，然后再在Bootloader下烧录对应的gif文件，以此来替代键盘固件内的gif动画。
-
-这里用一个网页小工具来转换。
-
-https://openkbd.github.io/tools/athena/
-
