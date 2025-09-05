@@ -16,7 +16,7 @@
 
 确认裁剪后，如果原图总帧数较大，那么可以选择起始帧和结束帧。如果本身平均间隔时间小，还可以进一步勾上帧率减半。只要最终预览结果里，平均间隔在100ms内，作为动图，流畅度是可用的。
 
-再下载对应的GIFx，下载的结果文件格式为UF2。键盘进入刷机模式后，将这个UF2文件像烧录固件一样，拖到目标磁盘内，完成更新对应的GIFx。
+再下载对应的GIFx，下载的结果文件格式为UF2。键盘进入刷机模式后(方法见:[RP2040 BootROM](/qmk/bootloader/rp2040-bootrom.md))，将这个UF2文件像烧录固件一样，拖到目标磁盘内，完成更新对应的GIFx。
 
 动图的资源，可以推荐看一下[Steam创意工坊: Wallpaper Engine](https://steamcommunity.com/workshop/browse/?appid=431960&browsesort=trend&section=readytouseitems)，这里大部分预览图都是GIF格式的。
 
