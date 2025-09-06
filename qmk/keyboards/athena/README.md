@@ -20,7 +20,7 @@
 |GIF1_Typing|与其他GIFx不同的是，GIF1在键盘空闲时默认速度播放，在打字时3倍速播放。最大31帧。|
 |GIF2 - GIF5|用于循环播放的动图。最大63帧。|
 
-下载的文件为 `原文件名_gifx_uf2`，uf2是用于烧录到键盘内置存储里的一种格式。
+下载的文件为 `原文件名_gifx.uf2`，uf2是用于烧录到键盘内置存储里的一种格式。
 
 键盘进入刷机模式后(可以直接使用快捷键 <kbd>LShift+RShift+LCtrl+B</kbd>，更多方法见:[RP2040 BootROM](/qmk/bootloader/rp2040-bootrom.md))。
 
