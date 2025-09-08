@@ -1,8 +1,10 @@
 # Athena Keyboard
 
-这是本站当前第一款支持小屏幕的键盘。这里简单说一下当前自定义小屏幕动图的方式。
+本键盘为本站当前首款支持小屏幕的产品。以下将简要介绍当前自定义小屏幕动图的方法。
 
-屏幕显示分辨率是128x128的。
+屏幕显示分辨率为128x128。
+
+固件源码地址: https://github.com/openkbd/vial-qmk-v6/tree/ava/keyboards/ydkb/athena1800
 
 ## 转换GIF为UF2格式，写入键盘
 
