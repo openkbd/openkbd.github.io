@@ -10,13 +10,15 @@
 
 ![](assets/zmk-studio-set-key-01.jpg)
 
-点击USB，再选择键盘。这里要选择的一般就是 <u>键盘的USB设备名(COMxx)</u>。
+点击USB，再选择键盘。这里要选择的一般就是 <u>键盘的USB设备名(COMxx)</u>。如果连接有问题，需要先将键盘的输出切换为USB，再刷新页面后，再次连接。
 
 ![](assets/zmk-studio-set-key-02.jpg)
 
 连接成功后，页面上就会显示出当前键盘的按键配置。
 
 ![](assets/zmk-studio-set-key-03.jpg)
+
+如果使用客户端(下载地址: https://zmk.studio/download)，在Windows和macOS下，也可以不用连接USB线，直接蓝牙模式下也能连接上zmk studio并且修改按键。
 
 ## 修改按键功能
 
