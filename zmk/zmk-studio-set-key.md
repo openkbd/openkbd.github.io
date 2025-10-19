@@ -18,7 +18,9 @@
 
 ![](assets/zmk-studio-set-key-03.jpg)
 
-如果使用客户端(下载地址: https://zmk.studio/download)，在Windows和macOS下，也可以不用连接USB线，直接蓝牙模式下也能连接上zmk studio并且修改按键。
+如果使用客户端(下载地址: https://zmk.studio/download)，在Windows和macOS下，可以不用连接USB线，直接蓝牙模式下也能连接上zmk studio并且修改按键。目前它在Windows下界面显示不是很完美，macOS下会好不少。
+
+![](assets/zmk-studio-set-key-08.png)
 
 ## 修改按键功能
 
