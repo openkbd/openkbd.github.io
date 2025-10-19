@@ -22,7 +22,10 @@ ZMK
     多媒体键和系统键
     修饰键加按键的组合如Win+Shift+S
     仅多个修饰键同时如Hyper(Ctrl+Shift+Cmd+Opt)
-    鼠标模拟键
+  Mouse
+    Mouse Key Press
+    Mouse Move
+    Mouse Scroll
   层切换
     Layer Momentary
     Layer To
