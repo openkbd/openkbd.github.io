@@ -14,4 +14,5 @@
     * [按键 | 修饰键](zmk/keymap/mod-tap)
     * [其他功能](zmk/keymap/other-behaviors)
 * [Keyboards](zmk/keyboards/)
+* [固件与源码](zmk/download/)
 * [Bootloader, 刷固件](zmk/bootloader/)
