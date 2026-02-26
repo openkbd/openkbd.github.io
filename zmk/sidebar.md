@@ -4,6 +4,7 @@
     * [蓝牙连接和设备切换](zmk/device/zmk-device-switching.md)
     * [节能](zmk/device/zmk-power-saving.md)
     * [电量显示与充电](zmk/device/zmk-battery.md)
+    * [NKRO](zmk-nkro.md)
 * 按键功能
     * [常规按键 ](zmk/keymap/normal-key.md)
     * [修饰键(组合键)](zmk/keymap/mods-key)
