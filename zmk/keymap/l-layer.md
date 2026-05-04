@@ -2,9 +2,9 @@
 
 类似于量产键盘的FN，属于最常用也是入门必学会的功能之一。一般人理解的Fn+1输出F1，最基础就是用这个来实现。
 
-ZMK 里这种层切换方式叫 Layer Momentary。
+ZMK 里这种层切换方式叫 Layer Momentary  或  Momentary Layer。
 
-简单以60来举例说，在Layer 0，选择一个键，选择 <u>Behavior</u> 为 <u>Layer Momentary</u>，选择 Layer 为 1。
+简单以60来举例说，在Layer 0，选择一个键，选择 <u>Behavior</u> 为 <u>Layer Momentary</u>，选择 Layer 为 1。有的键盘显示可能是 <u>Momentary Layer</u>。
 
 ![](assets/l-layer-01.jpg)
 
