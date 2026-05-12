@@ -8,4 +8,5 @@
 | --- | --- | --- |
 | Agar BLE | [github](https://github.com/openkbd/zmk-config-agar-ble/releases/) | |
 | Agar Mini BLE | [github](https://github.com/openkbd/zmk-config-agar-mini-ble/releases/) | |
+| Tofu60 BLE 3.0 | [github](https://github.com/openkbd/zmk-config-tofu60-ble-3.0/releases/) | |
 | Tofu TKL BLE 3.0 | [github](https://github.com/openkbd/zmk-config-tofu-tkl-ble-3.0/releases/) | |
